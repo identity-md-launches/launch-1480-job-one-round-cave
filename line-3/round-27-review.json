@@ -1,0 +1,102 @@
+{
+  "wall": {
+    "paths": [
+      "artifacts/line-3/wall-v8.png",
+      "artifacts/line-3/wall.png"
+    ],
+    "width": 1254,
+    "height": 1254,
+    "format": "PNG",
+    "mode": "RGB",
+    "sha256": "839787aa9559d5d410d5c26787afdad99171f43e5c099695b8c3e248fb684667",
+    "bytes": 3968635
+  },
+  "thumbnail": {
+    "path": "dist/line-3/27.jpg",
+    "width": 512,
+    "height": 512,
+    "format": "JPEG",
+    "bytes": 74180
+  },
+  "preservation": {
+    "inheritedSha256": "3dffe35e1b63e3c11218cd3587738fa1a2e1ecc25ebb2315af56036609e0db40",
+    "editRectangle": [
+      205,
+      608,
+      120,
+      100
+    ],
+    "changedPixels": 11509,
+    "changedPixelsOutsideRectangle": 0
+  },
+  "tests": {
+    "newPassed": 14,
+    "inheritedPassed": 53,
+    "demoExitCode": 0,
+    "demoDestination": "ZTO",
+    "demoIsSynthetic": true,
+    "demoIntrinsicGas": "21064",
+    "demoPragueFloorGas": "21160"
+  },
+  "visualReview": {
+    "reviewed": true,
+    "imagesReviewed": [
+      "artifacts/line-3/wall-v8.png",
+      "dist/line-3/27.jpg"
+    ],
+    "pepe": "Inherited heavy-lidded eyes and wide mouth retained.",
+    "visibleHandDigits": [
+      5,
+      5
+    ],
+    "newHandsOrStencils": 0,
+    "forbiddenVisualElementsFound": [],
+    "observation": "Small worn ochre bowl with charcoal pebbles beside Pepe. All ancestor pixels outside the vacant-rock addition unchanged. Local review only.",
+    "promptDifferences": "Renderer moved the requested mark downward and added extra pebbles; final confined composition preserves all ancestors. Pebble count is not an acceptance requirement."
+  },
+  "unmetVisualRequirements": [],
+  "checks": {
+    "recordSchema": true,
+    "recordHash": true,
+    "continuingWallIdentical": true,
+    "oldRecordsThumbnailsAndGoalUnchanged": true,
+    "imageFormatsAndDimensions": true,
+    "changedPathsWithinScope": true,
+    "newNonArtifactFilesUnder100KB": true,
+    "requiredPngUntracked": true,
+    "cliWorksFromAnotherDirectory": true,
+    "gitDiffWhitespaceCheck": true
+  },
+  "testSuites": [
+    {
+      "test": "line-3/tools/erc20-intent/test_intent.py",
+      "exitCode": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.015s\n\nOK"
+    },
+    {
+      "test": "line-3/tools/gas-budget/test_gas_budget.py",
+      "exitCode": 0,
+      "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.113s\n\nOK"
+    },
+    {
+      "test": "line-3/tools/rpc-unsigned-reader/test_rpc_reader.py",
+      "exitCode": 0,
+      "output": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.110s\n\nOK"
+    },
+    {
+      "test": "line-3/tools/unsigned-diff/test_unsigned_diff.py",
+      "exitCode": 0,
+      "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.004s\n\nOK"
+    },
+    {
+      "test": "line-3/tools/unsigned-guard/test_guard.py",
+      "exitCode": 0,
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK"
+    },
+    {
+      "test": "line-3/tools/zto-eip1559-decoder/test_decoder.py",
+      "exitCode": 0,
+      "output": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.060s\n\nOK"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Pepe Counts the Provision",
+  "image": "https://api.imd.fun/artifacts/839787aa9559d5d410d5c26787afdad99171f43e5c099695b8c3e248fb684667",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 3"
+    },
+    {
+      "trait_type": "Number",
+      "value": 27
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "gas-budget"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe counts the pebbles in a bowl before setting out."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Offline EIP-1559 transaction decoding"
+    }
+  ]
+}
