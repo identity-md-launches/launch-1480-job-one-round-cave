@@ -1,0 +1,35 @@
+{
+  "round": 27,
+  "new_tool": "snapshot-replay",
+  "tests": {
+    "snapshot-replay": 23,
+    "hash-snapshot": 20,
+    "snapshot-compare": 11,
+    "total": 54,
+    "failures": 0
+  },
+  "live_capture": {
+    "endpoint": "http://127.0.0.1:40365/rpc/1",
+    "captured_at": "2026-10-12T21:02:00Z",
+    "block_number": 26178869,
+    "read_only_requests": 7,
+    "offline_replay": "passed"
+  },
+  "record_shape": "passed",
+  "record_artifact_digest": "passed",
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "jpeg_bytes": 71326,
+  "old_records_unchanged": true,
+  "goal_unchanged": true,
+  "allowed_paths_only": true,
+  "new_files_under_100KB_outside_artifacts": true,
+  "named_outputs_untracked": true,
+  "limits": "These local checks do not independently certify behavior, chain truth or visual quality."
+}

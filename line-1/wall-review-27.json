@@ -1,0 +1,53 @@
+{
+  "round": 27,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG",
+  "color": "8-bit RGB",
+  "bytes": 3882375,
+  "sha256": "74f3a67468fc34800b445ec6c59370fc99fa3bda212cec605542712f01a38e0e",
+  "wall_paths": [
+    "artifacts/line-1/wall-v8.png",
+    "artifacts/line-1/wall.png"
+  ],
+  "inherited_wall_sha256": "4b1e252d0d0695b594fee75ea2eea85da43f611b8f6ee62f769023b95c9cb76d",
+  "generated_draft_sha256": "ea9ee44f6a26e8d8aeb6723019a90286959e4cd9a30f6bf480457c4ba4b22cf3",
+  "patch": [
+    550,
+    245,
+    130,
+    110
+  ],
+  "changed_pixels": 3071,
+  "changed_pixels_outside_patch": 0,
+  "lightened_channels": 0,
+  "thumbnail": {
+    "path": "dist/line-1/27.jpg",
+    "dimensions": [
+      512,
+      512
+    ],
+    "format": "baseline JPEG",
+    "bytes": 71326,
+    "sha256": "7b532fb5f9a15bc94f4aa81cdcbbbc63293a89df8aa399ca1f8d5aea8d51238d"
+  },
+  "visual_review": {
+    "pepe_preserved": true,
+    "digits_per_inherited_hand": 5,
+    "new_hands": 0,
+    "ancestor_marks_preserved": true,
+    "text_or_numbers_added": false,
+    "unmet_requirements": [],
+    "limits": "Subjective visual review of the full wall and thumbnail. The inherited rock has a photographic appearance and Pepe has bold outlines; both were preserved as required. The new pigment is generated charcoal, not a photograph or 3D render. No pixel outside the vacant upper patch changed."
+  },
+  "checks": {
+    "snapshot_replay_offline_tests": 23,
+    "snapshot_replay_demo": "passed",
+    "png_structure": "CRC and pixel roundtrip passed",
+    "preservation_pixel_comparison": "passed",
+    "related_ancestor_tests": 31,
+    "jpeg_structure": "512x512 baseline frame and valid SOI/EOI; visually decoded"
+  }
+}

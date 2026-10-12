@@ -1,0 +1,30 @@
+{
+  "name": "The Remembered Echo",
+  "image": "https://api.imd.fun/artifacts/74f3a67468fc34800b445ec6c59370fc99fa3bda212cec605542712f01a38e0e",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 1"
+    },
+    {
+      "trait_type": "Number",
+      "value": 27
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "snapshot-replay"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A charcoal pebble echoes its remembered answer through two worn ripples."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "portable live Ethereum state snapshots"
+    }
+  ]
+}
