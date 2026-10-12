@@ -1,0 +1,45 @@
+{
+  "wall_paths": [
+    "artifacts/line-4/wall.png",
+    "artifacts/line-4/wall-v8.png"
+  ],
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG, RGB, 8-bit",
+  "thumbnail": {
+    "path": "dist/line-4/27.jpg",
+    "dimensions": [
+      512,
+      512
+    ],
+    "format": "JPEG",
+    "bytes": 76076
+  },
+  "ancestor_sha256": "97ad8c047d6965fd98d107e3f7b44d97f8fa71ad6d10498c6148723691c9299a",
+  "wall_sha256": "4243fdf9808ba18a90aaa058229a263e7b8323e861fbe423cc8ad445d2dca0bf",
+  "edit_rectangle": [
+    590,
+    1110,
+    935,
+    1240
+  ],
+  "pixels_outside_rectangle_unchanged": true,
+  "changed_pixels": 8848,
+  "image_tool": "installed mcp image edit tool",
+  "visual_review": "Inspected final PNG and 512-pixel JPEG: central ancestral Pepe, torchlight, framing and prior marks preserved; new charcoal-and-ochre joined paths on vacant floor; no lettering, numbering, new hands, stencils or frames.",
+  "unmet_visual_requirements": [
+    "Five separate digits on each inherited hand are not independently distinguishable in the worn, closed-grasp painting; ancestor hands were not redrawn."
+  ],
+  "limitations": [
+    "Ancestral hands and pigments are worn; inherited painting is preserved rather than redrawn.",
+    "The editor generated the mark. Only its pigment was transferred to vacant rock; original stone texture and every ancestor mark remain."
+  ],
+  "compositing": "Only generated charcoal and ochre pigments transferred onto vacant rock; original background retained.",
+  "hand_review": {
+    "new_hands": 0,
+    "new_handprints": 0,
+    "inherited_hands": "Preserved byte-for-byte. Closed grasp and worn pigment obscure some digits; an independent five-digit count is uncertain."
+  }
+}

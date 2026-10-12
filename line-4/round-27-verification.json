@@ -1,0 +1,85 @@
+{
+  "kind": "schema-3-producer-companion-live-check",
+  "read_only": true,
+  "trials": [
+    {
+      "status": "validated",
+      "schema_version": 3,
+      "from_block": 26179026,
+      "to_block": 26179037,
+      "transfer_count": 0,
+      "receipt": {
+        "schema_version": 1,
+        "kind": "erc20-transfer-window-receipt",
+        "read_only": true,
+        "token": "ZTO",
+        "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+        "from_block": 26179026,
+        "to_block": 26179037,
+        "from_block_anchor": {
+          "number": 26179026,
+          "hash": "0xe48e0bb8b09c08fd3cb7a9354ce0af3d99aaed96d9b8972590029b2d5a87cd0f"
+        },
+        "to_block_anchor": {
+          "number": 26179037,
+          "hash": "0xa2babf9344218f35da55c69be60f2202b6f396d3e33ea9f0a606b646110af8e9"
+        },
+        "transfer_count": 0,
+        "window_sha256": "d183281a8007a7507e63171f6832b0866e56c7378a68a30173192c98871e7af2",
+        "capture_sha256": "d6d0297e62c36757189f90d50acd3c6370c7dbd6ee721f861ac8913a312fc9ed",
+        "limitations": "This receipt fingerprints one provider capture after local validation; it does not prove completeness, finality, provider honesty, or a balance."
+      }
+    },
+    {
+      "schema_version": 1,
+      "status": "agreement",
+      "read_only": true,
+      "providers": [
+        "https://ethereum-rpc.publicnode.com",
+        "https://eth.drpc.org"
+      ],
+      "token": "ZTO",
+      "from_block": 26179026,
+      "to_block": 26179037,
+      "transfer_counts": [
+        0,
+        0
+      ],
+      "metadata_differences": [],
+      "only_left": [],
+      "only_right": [],
+      "conflicts": [],
+      "limitations": "Agreement corroborates two provider observations; it does not prove completeness, provider independence, finality, or current balances."
+    }
+  ],
+  "offline_tests": {
+    "reader": 19,
+    "crosscheck": 15,
+    "receipt": 5,
+    "passed": 39
+  },
+  "offline_demos": "crosscheck agreement for 3 retained real transfers; receipt emitted",
+  "historical_trial": {
+    "from_block": 26178550,
+    "to_block": 26178551,
+    "status": "error",
+    "message": "PublicNode HTTP 403; no empty-success evidence produced"
+  },
+  "deliverable_checks": {
+    "png_dimensions": [
+      1254,
+      1254
+    ],
+    "jpeg_dimensions": [
+      512,
+      512
+    ],
+    "record_number": 27,
+    "goal_unchanged": true,
+    "older_records_unchanged": true,
+    "outputs_untracked": true,
+    "outside_mark_pixels_unchanged": true,
+    "source_dependencies": "Python standard library only",
+    "visual_review": "line-4/round-27-image-review.json"
+  }
+}

@@ -35,3 +35,9 @@ keys. A receipt is evidence for one captured bounded window, not a balance,
 full history, completeness proof, finality proof, or proof that a provider is
 honest. It reads no key, wallet, secret, environment variable, or network and
 does not sign or send anything.
+
+Round 27 repaired the sibling validator to accept current schema 3 captures
+as well as schema 2. Optional address summaries are revalidated from raw logs
+before either receipt digest is issued. Actual producer-to-receipt regressions
+and a fresh real ZTO capture passed; see the crosscheck README and
+`line-4/round-27-verification.json` for bounds and observed limitations.

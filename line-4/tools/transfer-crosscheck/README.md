@@ -80,3 +80,28 @@ The accompanying wall mark is **Twin Witness Trails**: Two ochre trails share a
 chalk loop as Pepe checks one window with two witnesses. Image dimensions,
 format, preservation checks and visual limitations are recorded in
 `line-4/round-23-image-review.json` and `line-4/ROUND-23.md`.
+
+## Schema 3 repair (round 27)
+
+The validator accepts the producer's current schema 3 and retained schema 2.
+An optional schema 3 `address_window_summary` is recomputed from validated raw
+logs, including exact integer/string types, normalized address, and all flow
+fields. A summary in schema 2, malformed summary, or unknown schema is rejected.
+The receipt companion inherits this repair through its validator import.
+
+On 2026-10-12 UTC, a fresh PublicNode ZTO capture at blocks 26179026–26179037
+(schema 3, with the public ZTO contract address selected) passed crosscheck
+validation and receipt creation. dRPC agreed on its zero transfers and boundary
+anchors. The saved `round-27-live-zto.json` can be replayed without a network:
+
+```sh
+python3 -B line-4/tools/transfer-window-receipt/receipt.py --capture line-4/tools/transfer-crosscheck/round-27-live-zto.json
+```
+
+All 39 line tests passed (19 reader, 15 crosscheck, 5 receipt). New regressions
+run the actual producer against dated real replies, feed its emitted schema 3
+into both companions, retain schema 2 compatibility, and reject tampered address
+summaries. Mocked transport tests are explicitly offline simulations. The older
+historical live range returned HTTP 403; this failure was not treated as empty
+evidence. Public-provider agreement and receipts remain observations, not
+proofs of completeness, honesty, finality, or balances.

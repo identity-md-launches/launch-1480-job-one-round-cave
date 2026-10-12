@@ -81,6 +81,75 @@ class CrosscheckTests(unittest.TestCase):
         self.right["from_block_anchor"]["number"] -= 1
         self.assertIn("from_block", c.compare(self.left, self.right)["metadata_differences"])
 
+    def produced(self, summary=True):
+        """Run the real producer against retained real replies, not schema relabeling."""
+        evidence = self.left
+        anchors = {evidence[key]["number"]: evidence[key]["hash"]
+                   for key in ("from_block_anchor", "to_block_anchor")}
+
+        def replies(endpoint, method, params):
+            if method == "eth_chainId": return "0x1"
+            if method == "eth_blockNumber": return hex(evidence["head_at_capture"])
+            if method == "eth_call": return "0x" + format(evidence["decimals"], "064x")
+            if method == "eth_getLogs": return copy.deepcopy(evidence["raw_logs"])
+            if method == "eth_getBlockByNumber":
+                number = int(params[0], 16)
+                return {"number": hex(number), "hash": anchors[number]}
+            raise AssertionError(method)
+
+        args = ["--from-block", str(evidence["from_block"]),
+                "--to-block", str(evidence["to_block"])]
+        if summary:
+            args += ["--address", evidence["transfers"][0]["to"]]
+        output = io.StringIO()
+        with mock.patch.object(c.window, "rpc", side_effect=replies), \
+                contextlib.redirect_stdout(output):
+            c.window.main(args)
+        return json.loads(output.getvalue())
+
+    def test_current_producer_to_crosscheck_and_receipt(self):
+        receipt_spec = c.importlib.util.spec_from_file_location(
+            "receipt", Path(__file__).parent.parent / "transfer-window-receipt" / "receipt.py")
+        receipt = c.importlib.util.module_from_spec(receipt_spec)
+        receipt_spec.loader.exec_module(receipt)
+        for summary in (False, True):
+            with self.subTest(summary=summary):
+                produced = self.produced(summary)
+                self.assertEqual(produced["schema_version"], 3)
+                self.assertEqual(c.compare(produced, self.right)["status"], "agreement")
+                self.assertEqual(receipt.receipt(produced)["window_sha256"],
+                                 receipt.receipt(self.left)["window_sha256"])
+
+    def test_schema3_summary_tampering_rejected_by_both_companions(self):
+        receipt_spec = c.importlib.util.spec_from_file_location(
+            "receipt", Path(__file__).parent.parent / "transfer-window-receipt" / "receipt.py")
+        receipt = c.importlib.util.module_from_spec(receipt_spec)
+        receipt_spec.loader.exec_module(receipt)
+        produced = self.produced()
+        mutations = [("received_raw", "0"), ("net", "0"), ("scope", "balance"),
+                     ("matching_transfer_count", True), ("incoming_transfer_count", 1.0),
+                     ("address", "invalid"), ("address", produced["address_window_summary"]["address"].upper()),
+                     ("extra", "unchecked")]
+        for key, value in mutations:
+            bad = copy.deepcopy(produced)
+            bad["address_window_summary"][key] = value
+            with self.subTest(key=key):
+                with self.assertRaises(c.window.RpcError): c.checked(bad)
+                with self.assertRaises(receipt.crosscheck.window.RpcError): receipt.receipt(bad)
+        for summary in (None, [], False):
+            bad = copy.deepcopy(produced)
+            bad["address_window_summary"] = summary
+            with self.assertRaises(c.window.RpcError): c.checked(bad)
+
+    def test_legacy_summary_and_unknown_schema_rejected(self):
+        bad = self.produced()
+        bad["schema_version"] = 2
+        with self.assertRaises(c.window.RpcError): c.checked(bad)
+        for schema in (1, 4, True, "3", 3.0):
+            bad = self.produced(False)
+            bad["schema_version"] = schema
+            with self.assertRaises(c.window.RpcError): c.checked(bad)
+
     def test_live_mode_pins_same_range(self):
         with mock.patch.object(c.window, "rpc", side_effect=["0x1", hex(26177321)]), \
                 mock.patch.object(c, "capture", side_effect=[self.left, self.right]) as acquire, \

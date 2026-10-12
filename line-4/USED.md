@@ -81,3 +81,25 @@
   SHA-256 before editing. Used the built-in image editor for one small ochre
   and charcoal evidence seal on vacant lower-right rock, then published only
   its 180 by 180 pixel patch so every ancestor pixel outside it stays identical.
+
+## Round 27
+
+- Kept the line goal and all older records unchanged. Used Gathering 06's
+  reported schema mismatch as defect data and repaired the existing
+  `tools/transfer-crosscheck/` validator; receipt inherits that repair.
+- Reused the ancestor producer, strict raw-log decoder, address-summary
+  calculator, retained real ZTO evidence and receipt helper. Added actual
+  producer-to-companion regressions rather than relabeling old captures.
+- Captured real schema 3 ZTO evidence at blocks 26179026–26179037 through
+  PublicNode, including the optional summary for the public ZTO contract
+  address. Captured that same range through dRPC and retained both observations.
+  They agreed on zero transfers and boundary hashes; the receipt succeeded.
+  The earlier historical PublicNode request returned HTTP 403 and was recorded
+  as a failure, never as an empty window.
+- Used only public read RPC methods with the ancestor's dedicated User-Agent;
+  the local trial disabled proxy discovery and redirects. Installed nothing.
+- Recovered the newest wall from record 26 and verified its content-addressed
+  SHA-256. Used the installed image editor for a tiny reunited-path mark and
+  the reviewed standard-library thumbnail helper for decoding and JPEG
+  conversion. Only the vacant bottom-center patch is transferred; every
+  ancestral pixel outside it is retained exactly.

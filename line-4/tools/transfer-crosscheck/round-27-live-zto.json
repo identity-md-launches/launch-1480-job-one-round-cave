@@ -1,0 +1,41 @@
+{
+  "address_window_summary": {
+    "address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+    "incoming_transfer_count": 0,
+    "matching_transfer_count": 0,
+    "net": "0",
+    "net_raw": "0",
+    "outgoing_transfer_count": 0,
+    "received": "0",
+    "received_raw": "0",
+    "scope": "Flows in this captured transfer-log window only; not a token balance or a complete activity history.",
+    "sent": "0",
+    "sent_raw": "0"
+  },
+  "captured_at": "2026-10-12T21:19:01Z",
+  "chain_id": 1,
+  "decimals": 18,
+  "decimals_block": 26179037,
+  "duplicate_count": 0,
+  "from_block": 26179026,
+  "from_block_anchor": {
+    "hash": "0xe48e0bb8b09c08fd3cb7a9354ce0af3d99aaed96d9b8972590029b2d5a87cd0f",
+    "number": 26179026
+  },
+  "head_at_capture": 26179037,
+  "limitations": "Single-provider observation; not a completeness or finality proof. Interior block hashes are retained but not independently verified.",
+  "provider_result": "validated",
+  "raw_logs": [],
+  "read_only": true,
+  "rpc": "https://ethereum-rpc.publicnode.com",
+  "schema_version": 3,
+  "to_block": 26179037,
+  "to_block_anchor": {
+    "hash": "0xa2babf9344218f35da55c69be60f2202b6f396d3e33ea9f0a606b646110af8e9",
+    "number": 26179037
+  },
+  "token": "ZTO",
+  "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "transfer_count": 0,
+  "transfers": []
+}
