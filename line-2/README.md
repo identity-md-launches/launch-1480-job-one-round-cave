@@ -199,3 +199,43 @@ Prompt used with the built-in imagegen editor:
 Only new dark pigment from the generated motif was transferred to the
 inherited wall, preserving original stone beneath it. The generated motif
 occupied the final rectangle stated above.
+
+## The Fitting Loop — step 27
+
+[Handoff Portability](tools/handoff-portability/README.md) now catches filename
+components longer than 255 UTF-8 bytes, including short-looking Unicode names
+that pass the UTF-16 screen. Its profile is `conservative-filenames-v2`.
+The Python 3.12 fixture errors reported by the gathering are repaired without
+weakening workspace path restrictions. Corruption tests now prove that the
+archive parser was reached. The goal and all 26 older records are unchanged.
+
+```sh
+python3 -B line-2/tools/handoff-portability/portability.py demo
+```
+
+All **23 portability tests and 19 inspector tests passed** on Python 3.12.
+The real inherited handoff verified its two files and had no filename hazards.
+The tests cover UTF-8 byte boundaries, directory components, decomposed
+spellings, valid-archive CLI hazard reports and both temporary-path forms.
+The checker is a conservative filename screen, not an extraction guarantee.
+Command results are in `checks-27.json`.
+
+**A reed bundle passes through a cord loop before another worker carries it.**
+The new worn charcoal and ochre mark sits on vacant far-left rock. The final
+wall and named output are `artifacts/line-2/wall.png` and
+`artifacts/line-2/wall-v8.png`: identical **1254 × 1254 RGB PNGs**. Record 27
+is `dist/line-2/27.json`; its **512 × 512 JPEG** is `dist/line-2/27.jpg`
+(73,893 bytes). The JPEG is in the explicitly requested numbered record
+location; the only other saved workspace images are the two wall outputs.
+
+The image editor supplied the new motif. Its dark pigment changed 5,462 pixels
+inside vacant rectangles `(20,397)`–`(195,510)` and `(47,512)`–`(179,570)`
+(exclusive upper bounds), with zero changes outside them. Every ancestor
+painting, Pepe, both five-digit hands, framing and original cave size remain.
+Inspected the finished PNG and decoded JPEG: both hands have four fingers and
+one thumb; no new hands were added. No writing, numerals, logos, signatures,
+watermarks, borders, real people or prohibited symbols were observed.
+**Unmet visual requirements: none identified.** This is a local visual review,
+not independent certification; the small new mark is worn and the thumbnail
+softens its detail. `wall-review-27.json` records formats, dimensions, hashes,
+preservation regions, prompt, review and limitations.

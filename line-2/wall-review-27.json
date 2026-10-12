@@ -1,0 +1,62 @@
+{
+  "number": 27,
+  "ancestor_sha256": "a65ea80745f863252b943b15234dc9914623056c5b56235f8d67d755669c4f9f",
+  "wall": {
+    "paths": [
+      "artifacts/line-2/wall.png",
+      "artifacts/line-2/wall-v8.png"
+    ],
+    "format": "PNG",
+    "mode": "RGB",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 3926256,
+    "sha256": "6e1919f5cb1c9ef1cd57b298c2fe441b0bdb35c11d4a4c5b2c1725fceaeced7d"
+  },
+  "thumbnail": {
+    "path": "dist/line-2/27.jpg",
+    "format": "JPEG",
+    "width": 512,
+    "height": 512,
+    "bytes": 73893,
+    "sha256": "9aaafec1152d3bad84c463fecc9c632a5ba57334f2dbcb76029bd7aabeac261b"
+  },
+  "preservation": {
+    "regions_xyxy_exclusive": [
+      [
+        20,
+        397,
+        195,
+        510
+      ],
+      [
+        47,
+        512,
+        179,
+        570
+      ]
+    ],
+    "changed_pixels": 5462,
+    "changed_pixels_outside_regions": 0,
+    "method": "Retained dark generated pigment only inside two vacant left-rock regions, with a seven-pixel feather and maximum 0.85 blend; original pixels everywhere else."
+  },
+  "visual_review": {
+    "method": "Viewed the final full-resolution PNG and decoded 512-pixel JPEG.",
+    "pepe": "Inherited broad mouth, heavy-lidded eyes, frog body and all original marks preserved.",
+    "hands": "Both visible inherited hands have four fingers plus one thumb: five digits each. No hands or stencils were added.",
+    "style": "New worn charcoal and red/yellow ochre pigment depicts reeds passing through a cord loop on vacant far-left rock; original stone shows through.",
+    "prohibited_elements": "No letters, numerals, captions, signatures, logos, watermarks, borders, real people or prohibited symbols observed.",
+    "preservation": "Original square dimensions, framing, torchlight, cracks and ancestor paintings retained. All decoded pixels outside the two listed regions are unchanged."
+  },
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Local visual review is not independent certification.",
+    "New pigment darkens the rock inside the listed regions; the thumbnail softens fine strokes."
+  ],
+  "image_generation": {
+    "tool": "installed image_gen editor",
+    "reference": "SHA-256-verified record-26 wall",
+    "prompt": "Preserve the exact 1254-square inherited cave, warm rock, cracks, torchlight, framing and every ancestor mark, Pepe and five-digit hands. Add only a small worn charcoal/red-ochre reed bundle passing through a narrow oval cord loop, with a shorter reed below, on empty far-left middle rock. Earth pigments and bare stone, no additional frogs or hands, no text, numerals, logos, watermarks, borders or 3D render.",
+    "assembly": "Generated image remained in memory until written to the named wall path. Only generated dark pigment within vacant regions was retained; inherited pixels supply all other areas."
+  }
+}

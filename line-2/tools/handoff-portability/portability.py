@@ -10,7 +10,7 @@ import unicodedata
 import zipfile
 
 
-PROFILE = 'conservative-windows-macos-v1'
+PROFILE = 'conservative-filenames-v2'
 
 
 def inspector():
@@ -57,6 +57,11 @@ def analyze(names):
                 add('windows-device-name', [name])
             if len(component.encode('utf-16-le')) // 2 > 255:
                 add('long-component', [name])
+            # Count the original spelling, including extensions, before any
+            # normalization. A short Unicode name can still be too many bytes
+            # for a destination with a 255-byte component limit.
+            if len(component.encode('utf-8')) > 255:
+                add('long-utf8-component', [name])
             if unicodedata.normalize('NFC', component) != component:
                 add('non-nfc-component', [name])
     # Include implicit directories: a payload 'A' cannot coexist with 'a/x',
@@ -88,6 +93,8 @@ def check_path(archive, expected=None):
             'issue_count': len(issues), 'issues': issues,
             'note': 'Conservative filename screen, not an OS extraction test, '
                     'software safety review or sender authentication. '
+                    'Each original component is screened against both 255 '
+                    'UTF-8 bytes and 255 UTF-16 units. '
                     'Relative paths over 240 UTF-16 units are flagged without '
                     'knowing the eventual destination prefix.'}
 

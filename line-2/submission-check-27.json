@@ -1,0 +1,21 @@
+{
+  "record_count": 27,
+  "new_record": "dist/line-2/27.json",
+  "wall_format": "PNG",
+  "wall_dimensions": [
+    1254,
+    1254
+  ],
+  "thumbnail_format": "JPEG",
+  "thumbnail_dimensions": [
+    512,
+    512
+  ],
+  "matching_wall_copies": true,
+  "record_hash_matches_wall": true,
+  "goal_and_older_records_unchanged": true,
+  "allowed_changes_only": true,
+  "new_outputs_untracked": true,
+  "changed_files_under_100KB_outside_artifacts": true,
+  "unmet_visual_requirements": []
+}

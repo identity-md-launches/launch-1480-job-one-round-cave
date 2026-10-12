@@ -17,6 +17,10 @@ spec.loader.exec_module(p)
 
 
 class PortabilityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        Path('test/scratch').mkdir(parents=True, exist_ok=True)
+
     def codes(self, names):
         return {item['code'] for item in p.analyze(names)}
 
@@ -67,6 +71,49 @@ class PortabilityTests(unittest.TestCase):
         names = ['CON', 'Dir/a', 'dir/B', 'foo.', 'foo']
         self.assertEqual(p.analyze(names), p.analyze(list(reversed(names))))
 
+    def test_utf8_component_boundary(self):
+        for prefix, fits, exceeds in [
+                ('', 'a'*255, 'a'*256),
+                ('', 'é'*127+'a', 'é'*128),
+                ('', '界'*85, '界'*86),
+                ('', '😀'*63+'abc', '😀'*64),
+                ('docs/', '界'*85, '界'*86)]:
+            with self.subTest(prefix=prefix, character=fits[0]):
+                self.assertNotIn('long-utf8-component', self.codes([prefix+fits]))
+                self.assertIn('long-utf8-component', self.codes([prefix+exceeds]))
+
+    def test_utf8_counts_original_spelling(self):
+        # NFC would shrink this below the budget. Extraction receives the
+        # original bytes, so screening must not silently normalize first.
+        name = 'e\u0301'*86
+        self.assertIn('long-utf8-component', self.codes([name]))
+        self.assertIn('non-nfc-component', self.codes([name]))
+
+    def test_utf8_directory_component(self):
+        name = '界'*86+'/file.txt'
+        self.assertIn({'code': 'long-utf8-component', 'paths': [name]},
+                      p.analyze([name]))
+        # The budget applies to components, not the sum of a whole path.
+        self.assertNotIn('long-utf8-component', self.codes(['界'*50+'/'+ '界'*50]))
+
+    def test_verified_utf8_hazard_cli(self):
+        with tempfile.TemporaryDirectory(dir='test/scratch') as root:
+            name = '界'*86+'.txt'
+            path = self.fixture(Path(root), [name])
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                status = p.main(['check', path])
+            result = json.loads(output.getvalue())
+            self.assertEqual(status, 2)
+            self.assertTrue(result['archive_verified'])
+            self.assertEqual(result['issues'],
+                             [{'code': 'long-utf8-component', 'paths': [name]}])
+            self.assertEqual(result['profile'], 'conservative-filenames-v2')
+
+    def test_verified_utf8_boundary_is_portable(self):
+        with tempfile.TemporaryDirectory(dir='test/scratch') as root:
+            path = self.fixture(Path(root), ['界'*85])
+            self.assertTrue(p.check_path(path)['portable'])
+
     def fixture(self, root, names):
         target = root / 'bundle.zip'
         files = []
@@ -78,7 +125,19 @@ class PortabilityTests(unittest.TestCase):
                               'sha256': hashlib.sha256(data).hexdigest()})
             archive.writestr('HANDOFF.json', json.dumps(
                 {'version': 1, 'algorithm': 'sha256', 'files': files}).encode())
-        return target.as_posix()
+        # Python 3.12 returns absolute TemporaryDirectory names, even when
+        # dir is relative. Keep the inspector's workspace path policy intact.
+        return target.absolute().relative_to(Path.cwd()).as_posix()
+
+    def test_fixture_absolute_and_relative_roots(self):
+        with tempfile.TemporaryDirectory(dir='test/scratch') as root:
+            absolute = Path(root).absolute()
+            relative = absolute.relative_to(Path.cwd())
+            for location in (absolute, relative):
+                with self.subTest(location=location):
+                    path = self.fixture(location, ['ok.txt'])
+                    self.assertFalse(Path(path).is_absolute())
+                    self.assertTrue(p.check_path(path)['archive_verified'])
 
     def test_real_inherited_archive(self):
         result = p.check_path('line-2/handoff.zip')
@@ -103,10 +162,11 @@ class PortabilityTests(unittest.TestCase):
             path.write_bytes(b'bad archive')
             with contextlib.redirect_stdout(io.StringIO()) as out, \
                     contextlib.redirect_stderr(io.StringIO()) as err:
-                status = p.main(['check', path.as_posix()])
+                status = p.main(['check', path.absolute().relative_to(Path.cwd()).as_posix()])
             self.assertEqual(status, 1)
             self.assertEqual(out.getvalue(), '')
             self.assertIn('handoff-portability:', err.getvalue())
+            self.assertIn('truncated ZIP archive', err.getvalue())
 
     def test_trusted_digest_and_mismatch(self):
         with tempfile.TemporaryDirectory(dir='test/scratch') as root:
@@ -126,7 +186,9 @@ class PortabilityTests(unittest.TestCase):
             path = self.fixture(Path(root), ['CON.txt'])
             data = Path(path).read_bytes().replace(b'payload for CON.txt', b'changed for CON.txt')
             Path(path).write_bytes(data)
-            with self.assertRaises((ValueError, zipfile.BadZipFile)):
+            # Prove corruption was reached, rather than passing on a path
+            # refusal before the inspector even opened the fixture.
+            with self.assertRaisesRegex(zipfile.BadZipFile, 'CRC'):
                 p.check_path(path)
 
 

@@ -120,3 +120,30 @@
   the two wall PNG paths and the required numbered JPEG only.
 - No environment-variable reads, configuration reads, keys, wallets, signing,
   transaction submission, payments, uploads or external posting were used.
+
+## Step 27 — Handoff Portability repair and UTF-8 screening
+
+- Preserved GOAL.md, all 26 earlier records, inherited ZIPs and the inspector.
+  Read the gathering report as task data and reproduced its two Python 3.12
+  fixture failures before repairing them. Tests now convert fixture paths to
+  workspace-relative paths, and check parser/CRC errors explicitly.
+- Improved the existing portability tool with a 255-byte UTF-8 component
+  budget. The versioned profile distinguishes this stricter screening rule.
+  Read the portability, inspector, inspector tests and original packager
+  before executing them. The actual inherited handoff supplies both demos.
+- Used only Python standard-library modules for the tool and tests. No
+  runtime dependency was installed; no network is needed to run the piece.
+  This offline filename screen does not need a coin, price, balance or pool.
+- Recovered record 26's public wall using the dedicated
+  Pepeolithic-Line2-PortabilityRepair/27 User-Agent and verified SHA-256
+  a65ea80745f863252b943b15234dc9914623056c5b56235f8d67d755669c4f9f.
+- Used the installed image editor with that wall as reference. Retained only
+  generated dark pigment on two vacant left-rock regions. All pixels outside
+  those regions, including every ancestor painting and both five-digit hands,
+  are unchanged. The new mark is a bundle passing through a cord loop.
+- Read and reused gathering/make_thumbnail.py without modifying it, for PNG
+  decoding, downsampling and JPEG encoding. Wrote only the two required wall
+  PNG paths and the numbered JPEG as workspace images. The installed skill
+  file is outside the workspace, so it was not read under this task's scope.
+- No environment-variable, key, wallet or secret reads, transaction signing,
+  transaction submission, payments or public posts were used.

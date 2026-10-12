@@ -1,0 +1,30 @@
+{
+  "name": "The Fitting Loop",
+  "image": "https://api.imd.fun/artifacts/6e1919f5cb1c9ef1cd57b298c2fe441b0bdb35c11d4a4c5b2c1725fceaeced7d",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Base"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 2"
+    },
+    {
+      "trait_type": "Number",
+      "value": 27
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "handoff-portability"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "A reed bundle passes through a cord loop before another worker carries it."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "reproducible offline-verifiable worker handoffs"
+    }
+  ]
+}
