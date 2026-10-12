@@ -1,0 +1,32 @@
+{
+  "reviewed": [
+    "artifacts/gathering/wall-v8.png",
+    "dist/gathering/07.jpg"
+  ],
+  "method": "Manual inspection of decoded whole-wall PNG and actual JPEG using view_image",
+  "inherited_pepe": "Broad mouth, big heavy-lidded eyes; preserved unchanged",
+  "hands": [
+    {
+      "hand": "viewer left",
+      "fingers": 4,
+      "thumbs": 1,
+      "total_digits": 5
+    },
+    {
+      "hand": "viewer right",
+      "fingers": 4,
+      "thumbs": 1,
+      "total_digits": 5
+    }
+  ],
+  "added_hands_or_handprints": 0,
+  "new_mark": "Charcoal echo pebble joined by red-ochre cord to a bowl of charcoal stones",
+  "ancestor_preservation": "All original pixels outside the vacant-rock patch remain identical; no inherited mark intersects the patch",
+  "forbidden_elements_observed": [],
+  "unmet_visual_requirements": [],
+  "limitations": [
+    "Manual review is subjective, not independent artistic certification.",
+    "Inherited naturalistic cave-rock appearance remains as required.",
+    "Small pigment motif is subdued on darker upper-right rock and loses detail at thumbnail scale."
+  ]
+}

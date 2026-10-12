@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-1/tools/snapshot-check/check_snapshot.py"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"captured_at\": \"2026-10-12T15:03:17Z\",\n  \"decimal_result\": \"26177163\",\n  \"endpoint\": \"https://ethereum-rpc.publicnode.com\",\n  \"evidence_limits\": \"Provider observation; not proof of authenticity, finality or current state.\",\n  \"method\": \"eth_blockNumber\",\n  \"params\": [],\n  \"result\": \"0x18f6e8b\"\n}\n",
+  "stderr": ""
+}

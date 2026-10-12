@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-2/tools/handoff/handoff.py",
+    "verify",
+    "line-2/handoff.zip"
+  ],
+  "exit": 0,
+  "stdout": "{\"bytes\": 12603, \"files\": 2, \"sha256\": \"aaa03a258268263186f610e17ad8ede6851c8597b70a7ec29ae6b283f72f60bb\", \"verified\": true}\n",
+  "stderr": "",
+  "workspace": "disposable mirror in test/scratch",
+  "fixture_adaptation": "source suite /tmp redirected into test/scratch"
+}

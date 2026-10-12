@@ -97,3 +97,16 @@ raw-log mutations, recomputed disagreement, canonical RLP, false block links,
 numeric type confusion, bounded inputs, endpoint/method refusal and overwrite
 refusal before networking. Demo behavior was also checked after copying just
 this folder into scratch with no sibling line folders.
+# Gathering 07 compatibility repair
+
+The inherited validator rejected fresh schema-3 windows with `validated
+read-only schema 2 mainnet capture required`. The current Line 4 producer and
+schema-2/3 crosscheck are now copied here unchanged, with old and current hashes
+in PROVENANCE.json. All historical examples remain intact. Optional address
+summaries are recomputed from validated raw logs, including strict count types.
+
+All 19 review tests passed, including three new producer-to-review regressions:
+schema-3 round trips with and without an address summary, false summary values
+and types, and comparisons recomputed from current captures. The exact fresh
+PublicNode schema-3 capture also packaged and inspected successfully after this
+repair. Receipt: `gathering/checks/round-08/evidence-review-after.json`.

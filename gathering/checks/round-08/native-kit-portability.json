@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-2/tools/handoff-portability/portability.py",
+    "check",
+    "gathering/checks/round-08/call-witness.zip",
+    "--sha256",
+    "583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"archive_sha256\": \"583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21\",\n  \"archive_verified\": true,\n  \"file_count\": 12,\n  \"format\": \"handoff-portability-v1\",\n  \"issue_count\": 0,\n  \"issues\": [],\n  \"note\": \"Conservative filename screen, not an OS extraction test, software safety review or sender authentication. Each original component is screened against both 255 UTF-8 bytes and 255 UTF-16 units. Relative paths over 240 UTF-16 units are flagged without knowing the eventual destination prefix.\",\n  \"portable\": true,\n  \"profile\": \"conservative-filenames-v2\",\n  \"trusted_digest_matched\": true\n}\n",
+  "stderr": "",
+  "digest_note": "Locally computed integrity reference; not an independent sender-authentication channel."
+}

@@ -171,3 +171,64 @@ The named PNGs remain untracked for the daemon's separate upload. No dependency
 installation or submodule was added. The report and check receipts preserve
 failures as well as successes; structural verification does not certify
 behavior or public-provider truth.
+
+## The Remembered Provision — Gathering 07 (named output v8)
+
+Added `shared/call-witness/`, joining recorded hash-pinned call replay with
+original unsigned-input inspection and explicit gas-rule diagnostics. Repaired
+the older Evidence review kit's schema-3 compatibility while keeping its older
+examples. REPORT.md covers all four lines, their repaired prior failures,
+remaining limits and bounded scope; COINS.md says **none**.
+
+Local checks: **278 line tests**, **12 Call witness tests** and **19 Evidence
+review tests** passed, along with documented demos, fresh public ZTO reads,
+native Line 2 archive/source/filename checks and a standalone kit demonstration.
+All 134 line-folder files retain their starting hashes. No dependency installation
+or submodule was added. No archive was extracted or its payload executed.
+
+- `artifacts/gathering/wall-v8.png` and `wall.png`: identical complete walls,
+  **1254×1254**, **8-bit RGB PNG**, **3,836,639 bytes** each.
+- `dist/gathering/07.jpg`: **512×512 baseline color JPEG**, **67,939 bytes**.
+- `dist/gathering/07.json`: prescribed six traits and the actual wall hash URL.
+- `dist/goals.json`: exact four unchanged goals; `dist/index.html`: inline-style
+  gallery containing all **129 records**, **79,462 bytes**.
+
+Record 06's missing wall was recovered from its artifact URL and its digest
+verified. The installed image tool supplied a worn charcoal echo pebble, bowl
+and red-ochre cord. The first draft's dark backing was rejected; the second
+white-backed insert was inspected, removed in memory and confined to vacant
+upper-right rock. Both temporary drafts used the required PNG path and were
+overwritten by the whole wall; no extra image was saved. `finish_wall8.py` uses
+the inherited standard-library PNG/JPEG helper and requires the source digest,
+so it refuses to accidentally repaint an already-finished wall.
+
+Pixel comparison found **6,257 changed pixels**, all inside **(850,185,260,120)**,
+and **zero changes outside**. Pepe, his hands, torch, scroll, tied stones, flints,
+anchor, pouch and witness knot remain unchanged. Rock shows through the pigment;
+all rock, cracks, illumination and framing outside its footprint are identical.
+
+The final whole PNG and actual JPEG were inspected visually. Pepe retains the
+wide mouth and large heavy-lidded eyes. The viewer-left and viewer-right hands
+each show **four fingers plus one thumb, five digits**. No hand or stencil was
+added. No letters, numbers, captions, signatures, logos, watermarks, borders,
+frames, real people or political/hateful symbols were observed. The addition is
+flat, worn earth pigment; no photographic or 3D mark was added.
+
+**Unmet visual requirements: none identified locally.** Review is subjective,
+not independent artistic certification. The inherited naturalistic rock is
+preserved. The small upper-right motif is subdued on dark stone and loses detail
+in its JPEG preview. Exact prompt and production limits are in IMAGE-PROMPT-08.md;
+format, preservation and review receipts are in `checks/round-08/`.
+
+Final PNG SHA-256:
+`846767d546efffd0fe4f223989c803aaafcb52e8c629b5528140be2dc380a5d5`.
+The named PNG remains untracked for separate daemon upload. Existing line
+records and thumbnails, older gathering records and remaining placeholders were
+preserved. This is a later gathering; no placeholder set needed reseeding.
+
+```sh
+python3 -B shared/call-witness/witness.py demo
+python3 -B shared/call-witness/test_witness.py
+python3 -B shared/evidence-review/test_review.py
+python3 -B gathering/check_round8_deliverable.py
+```

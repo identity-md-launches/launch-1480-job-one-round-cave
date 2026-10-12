@@ -30,6 +30,55 @@ class ReviewTests(unittest.TestCase):
         data = r.build(self.inputs)
         self.assertEqual(r.handoff.verify(data)['sha256'], r.inspect(data)['integrity']['archive_sha256'])
 
+    def current_window(self, include_address=True):
+        """Current producer, with retained real responses replayed offline."""
+        source = json.loads(self.inputs['transfer-window'])
+        anchors = {source[key]['number']: source[key]['hash']
+                   for key in ('from_block_anchor', 'to_block_anchor')}
+        def replies(endpoint, method, params):
+            if method == 'eth_chainId': return '0x1'
+            if method == 'eth_blockNumber': return hex(source['head_at_capture'])
+            if method == 'eth_call': return '0x' + format(source['decimals'], '064x')
+            if method == 'eth_getLogs': return copy.deepcopy(source['raw_logs'])
+            if method == 'eth_getBlockByNumber':
+                number = int(params[0], 16)
+                return {'number': hex(number), 'hash': anchors[number]}
+            raise AssertionError(method)
+        arguments = ['--from-block', str(source['from_block']), '--to-block', str(source['to_block'])]
+        if include_address:
+            arguments += ['--address', source['transfers'][0]['to']]
+        with patch.object(r.cross.window, 'rpc', side_effect=replies), \
+                contextlib.redirect_stdout(io.StringIO()) as out:
+            r.cross.window.main(arguments)
+        return json.loads(out.getvalue())
+
+    def test_current_schema3_producer_roundtrip(self):
+        for address in (True, False):
+            obj = self.current_window(address)
+            self.assertEqual(obj['schema_version'], 3)
+            raw = r.encode(obj)
+            packed = r.build({'transfer-window': raw})
+            receipt = r.inspect(packed)
+            self.assertEqual(receipt['evidence'][0]['summary']['transfer_count'], 3)
+            with zipfile.ZipFile(io.BytesIO(packed)) as archive:
+                self.assertEqual(archive.read('evidence/transfer-window.json'), raw)
+
+    def test_current_address_summary_types_and_values_revalidated(self):
+        for field, value in (('received_raw', '0'), ('incoming_transfer_count', True),
+                             ('incoming_transfer_count', 1.0), ('address', 'bad'), ('scope', 'balance')):
+            obj = self.current_window()
+            obj['address_window_summary'][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(RuntimeError):
+                r.build({'transfer-window': r.encode(obj)})
+
+    def test_current_comparison_recomputed(self):
+        left, right = self.current_window(), self.current_window(False)
+        right['rpc'] = 'https://eth.drpc.org'
+        report = r.cross.compare(left, right)
+        report['evidence'] = {'left': left, 'right': right}
+        receipt = r.inspect(r.build({'transfer-comparison': r.encode(report)}))
+        self.assertEqual(receipt['evidence'][0]['summary']['status'], 'agreement')
+
     def test_separate_blocks_not_claimed_atomic(self):
         result = r.inspect(r.build(self.inputs))
         self.assertEqual(result['context']['status'], 'separate observations')

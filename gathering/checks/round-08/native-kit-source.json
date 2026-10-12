@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-2/tools/handoff-source/source_check.py",
+    "check",
+    "gathering/checks/round-08/call-witness.zip",
+    "shared/call-witness",
+    "--sha256",
+    "583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"archive_sha256\": \"583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21\",\n  \"archive_verified\": true,\n  \"changed\": [],\n  \"counts\": {\n    \"changed\": 0,\n    \"missing_from_source\": 0,\n    \"omitted_from_archive\": 0,\n    \"unchanged\": 12\n  },\n  \"format\": \"handoff-source-check-v1\",\n  \"matches_source\": true,\n  \"missing_from_source\": [],\n  \"note\": \"Byte equality is not authenticity or a safety review. Empty directories are not payloads. Use a stable workspace; this is not an atomic snapshot.\",\n  \"omitted_from_archive\": [],\n  \"trusted_digest_matched\": true,\n  \"unchanged\": [\n    \"PROVENANCE.json\",\n    \"README.md\",\n    \"examples/zto-imd-snapshot.json\",\n    \"test_witness.py\",\n    \"vendor/erc20-intent/intent.py\",\n    \"vendor/gas-budget/gas_budget.py\",\n    \"vendor/hash-snapshot/hash_snapshot.py\",\n    \"vendor/rpc-snapshot/rpc_snapshot.py\",\n    \"vendor/rpc-unsigned-reader/rpc_reader.py\",\n    \"vendor/snapshot-replay/replay.py\",\n    \"vendor/zto-eip1559-decoder/tx_decode.py\",\n    \"witness.py\"\n  ]\n}\n",
+  "stderr": "",
+  "digest_note": "Locally computed integrity reference; not an independent sender-authentication channel."
+}

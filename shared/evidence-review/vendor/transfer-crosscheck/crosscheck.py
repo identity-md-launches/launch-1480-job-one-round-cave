@@ -21,11 +21,11 @@ def checked(capture):
     """Rebuild transfers from raw evidence before trusting a saved summary."""
     if not isinstance(capture, dict):
         raise window.RpcError("capture must be an object")
-    if (type(capture.get("schema_version")) is not int or capture["schema_version"] != 2
+    if (type(capture.get("schema_version")) is not int or capture["schema_version"] not in (2, 3)
             or type(capture.get("chain_id")) is not int or capture["chain_id"] != 1
             or capture.get("read_only") is not True
             or capture.get("provider_result") != "validated"):
-        raise window.RpcError("validated read-only schema 2 mainnet capture required")
+        raise window.RpcError("validated read-only schema 2 or 3 mainnet capture required")
     if not isinstance(capture.get("rpc"), str):
         raise window.RpcError("capture RPC URL must be a string")
     window.validate_endpoint(capture["rpc"])
@@ -60,6 +60,22 @@ def checked(capture):
     if (capture.get("transfers") != events or capture["transfer_count"] != len(events)
             or capture["duplicate_count"] != duplicates):
         raise window.RpcError("capture summary disagrees with raw evidence")
+    if "address_window_summary" in capture:
+        if capture["schema_version"] != 3:
+            raise window.RpcError("address summary requires schema 3")
+        summary = capture["address_window_summary"]
+        if not isinstance(summary, dict):
+            raise window.RpcError("address summary must be an object")
+        try:
+            selected = window.address(summary.get("address"))
+        except argparse.ArgumentTypeError as exc:
+            raise window.RpcError("invalid address summary address") from exc
+        expected = window.address_summary(events, selected, capture["decimals"])
+        # Compare types too: Python considers True == 1 and 1.0 == 1.
+        if (summary.keys() != expected.keys()
+                or any(type(summary[key]) is not type(value) or summary[key] != value
+                       for key, value in expected.items())):
+            raise window.RpcError("address summary disagrees with raw evidence")
     return {"chain_id": 1, "token_address": capture["token_address"],
             "from_block": start, "to_block": end, "decimals": capture["decimals"],
             "from_block_anchor": anchors[0], "to_block_anchor": anchors[1],

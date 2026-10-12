@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "tracked_changed": [
+    "dist/gathering/07.json",
+    "dist/index.html",
+    "gathering/COINS.md",
+    "gathering/README.md",
+    "gathering/REPORT.md",
+    "shared/README.md",
+    "shared/evidence-review/PROVENANCE.json",
+    "shared/evidence-review/README.md",
+    "shared/evidence-review/test_review.py",
+    "shared/evidence-review/vendor/erc20-transfer-window/transfer_window.py",
+    "shared/evidence-review/vendor/transfer-crosscheck/crosscheck.py"
+  ],
+  "new_source_files": 91,
+  "required_png_tracked": false,
+  "line_source_hashes_unchanged": 134,
+  "source_size_limit_bytes": 100000,
+  "only_new_pictures": [
+    "artifacts/gathering/wall-v8.png",
+    "artifacts/gathering/wall.png",
+    "dist/gathering/07.jpg"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "address_window_summary": {
+    "address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+    "incoming_transfer_count": 0,
+    "matching_transfer_count": 0,
+    "net": "0",
+    "net_raw": "0",
+    "outgoing_transfer_count": 0,
+    "received": "0",
+    "received_raw": "0",
+    "scope": "Flows in this captured transfer-log window only; not a token balance or a complete activity history.",
+    "sent": "0",
+    "sent_raw": "0"
+  },
+  "captured_at": "2026-10-12T21:29:09Z",
+  "chain_id": 1,
+  "decimals": 18,
+  "decimals_block": 26178997,
+  "duplicate_count": 0,
+  "from_block": 26178996,
+  "from_block_anchor": {
+    "hash": "0x9de4fb0d45fb044831aba977082f8f2756677b59e384dc0aa7580bdadf7780ed",
+    "number": 26178996
+  },
+  "head_at_capture": 26179088,
+  "limitations": "Single-provider observation; not a completeness or finality proof. Interior block hashes are retained but not independently verified.",
+  "provider_result": "validated",
+  "raw_logs": [],
+  "read_only": true,
+  "rpc": "https://eth.drpc.org",
+  "schema_version": 3,
+  "to_block": 26178997,
+  "to_block_anchor": {
+    "hash": "0xcc1f09b856674e96b1c3e1f5e9ec2e1d1f9ab104bdc0cd75db211df6ccbf1468",
+    "number": 26178997
+  },
+  "token": "ZTO",
+  "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+  "transfer_count": 0,
+  "transfers": []
+}

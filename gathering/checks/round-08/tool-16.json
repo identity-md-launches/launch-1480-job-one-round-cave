@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-3/tools/unsigned-guard/test_guard.py"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.003s\n\nOK\n",
+  "workspace": "disposable mirror in test/scratch",
+  "fixture_adaptation": "source suite /tmp redirected into test/scratch",
+  "tests_run": 8
+}

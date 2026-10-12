@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "line_files_unchanged": 134,
+  "goals": 4,
+  "walls": 5,
+  "records": 129,
+  "painted": 35,
+  "placeholders": 94,
+  "png": "1254x1254 8-bit RGB",
+  "jpeg": "512x512 baseline color",
+  "wall_sha256": "846767d546efffd0fe4f223989c803aaafcb52e8c629b5528140be2dc380a5d5",
+  "visual_review": "Manual review in README.md; not certified by this checker."
+}

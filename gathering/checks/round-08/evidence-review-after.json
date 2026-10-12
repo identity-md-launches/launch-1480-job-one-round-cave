@@ -1,0 +1,59 @@
+{
+  "schema": "evidence-review-receipt/1",
+  "integrity": {
+    "format": "handoff-inspection-v1",
+    "verified": true,
+    "archive_sha256": "89209660f52df9076b4f65241c035d3e20fe0163a4b68c9a94b073ee18d2cbc1",
+    "archive_bytes": 3096,
+    "trusted_digest_matched": false,
+    "file_count": 2,
+    "payload_bytes": 2455,
+    "files": [
+      {
+        "bytes": 1116,
+        "path": "REVIEW.json",
+        "sha256": "ccdb0b54654f68b68010c9c3aa21f5c2f905d43f1096d4f6ef4ddef4bcff3866"
+      },
+      {
+        "bytes": 1339,
+        "path": "evidence/transfer-window.json",
+        "sha256": "37473cbf80fc5436c4c88270b3f5bc56116154780a00d66ffce2d0b90d77cbf0"
+      }
+    ],
+    "limits": {
+      "archive_bytes": 99000,
+      "payload_bytes": 99000,
+      "manifest_bytes": 99000,
+      "metadata_bytes": 99000,
+      "files": 5
+    }
+  },
+  "evidence": [
+    {
+      "kind": "transfer-window",
+      "path": "evidence/transfer-window.json",
+      "sha256": "37473cbf80fc5436c4c88270b3f5bc56116154780a00d66ffce2d0b90d77cbf0",
+      "summary": {
+        "chain_id": 1,
+        "decimals": 18,
+        "from_block": 26178996,
+        "from_block_anchor": {
+          "hash": "0x9de4fb0d45fb044831aba977082f8f2756677b59e384dc0aa7580bdadf7780ed",
+          "number": 26178996
+        },
+        "to_block": 26178997,
+        "to_block_anchor": {
+          "hash": "0xcc1f09b856674e96b1c3e1f5e9ec2e1d1f9ab104bdc0cd75db211df6ccbf1468",
+          "number": 26178997
+        },
+        "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+        "transfer_count": 0
+      }
+    }
+  ],
+  "context": {
+    "note": "No paired supply/window context.",
+    "status": "separate observations"
+  },
+  "limits": "Integrity and structural consistency only. Provider observations do not prove authenticity, completeness, independence or finality. Unsigned inspection does not establish simulation, inclusion or safety to sign."
+}

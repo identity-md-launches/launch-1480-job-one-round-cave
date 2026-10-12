@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "shared/call-witness/test_witness.py"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "test_cli_success_shortfall_and_invalid_exit_contract (__main__.Tests.test_cli_success_shortfall_and_invalid_exit_contract) ... ok\ntest_conflicting_duplicate_calls_and_invalid_snapshot_refused (__main__.Tests.test_conflicting_duplicate_calls_and_invalid_snapshot_refused) ... ok\ntest_expected_digest_requires_actual_match (__main__.Tests.test_expected_digest_requires_actual_match) ... ok\ntest_extra_fields_and_unselected_profiles_refused (__main__.Tests.test_extra_fields_and_unselected_profiles_refused) ... ok\ntest_fee_nonce_access_list_never_claimed_as_simulated (__main__.Tests.test_fee_nonce_access_list_never_claimed_as_simulated) ... ok\ntest_full_calldata_and_destination_must_match (__main__.Tests.test_full_calldata_and_destination_must_match) ... ok\ntest_identical_duplicates_and_case_are_byte_matches (__main__.Tests.test_identical_duplicates_and_case_are_byte_matches) ... ok\ntest_json_and_rlp_agree_on_original_unsigned_fields (__main__.Tests.test_json_and_rlp_agree_on_original_unsigned_fields) ... ok\ntest_low_gas_is_reported_even_with_captured_call (__main__.Tests.test_low_gas_is_reported_even_with_captured_call) ... ok\ntest_real_response_and_honest_context (__main__.Tests.test_real_response_and_honest_context) ... ok\ntest_signed_json_and_incomplete_objects_refused (__main__.Tests.test_signed_json_and_incomplete_objects_refused) ... ok\ntest_wrong_chain_native_value_and_creation_refused (__main__.Tests.test_wrong_chain_native_value_and_creation_refused) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.014s\n\nOK\n"
+}

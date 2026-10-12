@@ -1,0 +1,136 @@
+{
+  "schema": "call-witness/v1",
+  "offline": true,
+  "match_kind": "destination-and-full-calldata-at-recorded-hash",
+  "snapshot": {
+    "canonical_content_sha256": "d09af0ed18e7d01e793dc38a3eff1fac131bac5952a813006fa1858c5c0781d4",
+    "expected_digest_matched": false,
+    "endpoint": "https://eth.drpc.org",
+    "captured_at": "2026-10-12T21:29:08Z",
+    "anchor": {
+      "hash": "0xcc1f09b856674e96b1c3e1f5e9ec2e1d1f9ab104bdc0cd75db211df6ccbf1468",
+      "number": "0x18f75b5",
+      "parentHash": "0x9de4fb0d45fb044831aba977082f8f2756677b59e384dc0aa7580bdadf7780ed",
+      "timestamp": "0x6acd4cd7"
+    },
+    "block_number_decimal": "26178997"
+  },
+  "unsigned_input": {
+    "format": "rlp",
+    "text_sha256": "ea665907f094f214b487c05d37eaab3999c87d39f14ebdad0646fb67ab0a3976",
+    "meaning": "SHA-256 of supplied UTF-8 inspection text, not an Ethereum transaction hash."
+  },
+  "matched_observation_labels": [
+    "ZTO-supply"
+  ],
+  "replayed_call": {
+    "request": {
+      "jsonrpc": "2.0",
+      "id": "call-witness",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+          "data": "0x18160ddd"
+        },
+        {
+          "blockHash": "0xcc1f09b856674e96b1c3e1f5e9ec2e1d1f9ab104bdc0cd75db211df6ccbf1468",
+          "requireCanonical": true
+        }
+      ]
+    },
+    "response": {
+      "jsonrpc": "2.0",
+      "id": "call-witness",
+      "result": "0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000"
+    }
+  },
+  "unsigned_gas_budget": {
+    "schema": "gas-budget/v1",
+    "profile": "prague",
+    "inputFormat": "rlp",
+    "inspection": {
+      "transaction": {
+        "type": "EIP-1559",
+        "typeByte": "0x02",
+        "chainId": "1",
+        "nonce": "0",
+        "maxPriorityFeePerGas": "1000000000",
+        "maxFeePerGas": "2000000000",
+        "gasLimit": "100000",
+        "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+        "value": "0",
+        "data": "0x18160ddd",
+        "accessList": [],
+        "calldataSelector": "0x18160ddd"
+      },
+      "destinationLabel": "ZTO",
+      "feeBudget": {
+        "gasFeeCapWei": "200000000000000",
+        "valuePlusGasFeeCapWei": "200000000000000",
+        "meaning": "Gas limit times maximum fee per gas; excludes token transfers. Not an estimate."
+      },
+      "calldata": {
+        "status": "abi-pattern-match",
+        "selector": "0x18160ddd",
+        "candidateMethod": "totalSupply",
+        "arguments": {}
+      },
+      "warnings": [
+        "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+        "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior."
+      ]
+    },
+    "counts": {
+      "dataBytes": "4",
+      "zeroBytes": "0",
+      "nonzeroBytes": "4",
+      "calldataTokens": "16",
+      "accessAddressOccurrences": "0",
+      "accessStorageKeyOccurrences": "0",
+      "uniqueAccessAddresses": "0",
+      "uniqueAddressStorageKeyPairs": "0",
+      "initcodeWords": "0"
+    },
+    "gas": {
+      "components": {
+        "baseGas": "21000",
+        "zeroByteGas": "0",
+        "nonzeroByteGas": "64",
+        "accessAddressGas": "0",
+        "accessStorageKeyGas": "0",
+        "creationGas": "0",
+        "initcodeWordGas": "0"
+      },
+      "intrinsicGas": "21064",
+      "calldataFloorGas": "21160",
+      "requiredMinimumGasLimit": "21160",
+      "suppliedGasLimit": "100000",
+      "gasLimitMeetsMinimum": true,
+      "shortfallGas": "0",
+      "aboveMinimumGas": "78840",
+      "meaning": "Lower bound only, not an estimate of EVM execution or gas used."
+    },
+    "initcode": {
+      "isCreation": false,
+      "wordMeteringApplied": false,
+      "maximumBytes": null,
+      "sizeWithinLimit": null
+    },
+    "checkedViolations": [],
+    "passesCheckedConstraints": true,
+    "warnings": [
+      "Offline inspection only: no chain state, simulation, sender or contract behavior verified.",
+      "Selectors can collide; an ABI pattern match does not prove ERC-20 behavior.",
+      "Explicit historical gas profile only; no activation, execution, base fee, block limits, balance, nonce, refunds or safety to sign checked. Passing is not transaction validity."
+    ]
+  },
+  "transaction_execution_verified": false,
+  "limitations": [
+    "The response belongs to the captured to/data eth_call, not execution of the unsigned transaction.",
+    "Sender, nonce, fees, gas and access list were not supplied in that captured call; matching bytes do not establish matching execution context.",
+    "Gas arithmetic uses the explicitly selected historical profile, without checking fork activation or estimating EVM execution.",
+    "No fresh RPC, canonicality, finality, provider honesty, balance, execution success or safety to sign is checked.",
+    "An expected digest authenticates evidence only when obtained through a separately trusted channel."
+  ]
+}

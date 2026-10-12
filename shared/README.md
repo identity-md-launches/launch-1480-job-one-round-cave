@@ -63,3 +63,17 @@ original evidence bytes. The folder is standalone standard-library Python.
 ```sh
 python3 -B shared/window-handoff/window_handoff.py demo
 ```
+
+[`call-witness/`](call-witness/README.md) (gathering 07, named output v8) joins
+Line 1's offline snapshot replay with Line 3's unsigned gas-budget diagnostic.
+It matches exact destination/calldata at the recorded hash and carries the
+original response bytes with provenance, while explicitly keeping transaction
+execution unverified. The folder is standalone standard-library Python.
+
+```sh
+python3 -B shared/call-witness/witness.py demo
+```
+
+Gathering 07 also refreshed Evidence review's Line 4 copies to accept current
+schema-3 captures and revalidate optional address summaries. Its historical
+schema-2 examples still pass; no line sources or old examples were changed.

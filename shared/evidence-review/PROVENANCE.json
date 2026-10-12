@@ -44,17 +44,27 @@
     },
     {
       "source": "line-4/tools/erc20-transfer-window/transfer_window.py",
-      "source_sha256": "2c6ad8509b3dad22d7675f631078c480a657776b7be442902e88a2522a3823c7",
+      "source_sha256": "2b6ee2c15c52b40536150677bd1a53941dedaa84227ccb13620de2238b4c0bc3",
       "copy": "vendor/erc20-transfer-window/transfer_window.py",
-      "changes": "Endpoint policy amendment only.",
-      "copy_sha256": "c6f513dacd210c5241ba6fc8bf0fd0bb6ac392065965c63f5033b22c6b8accc6"
+      "changes": "Gathering 07: byte-for-byte refresh from current schema-3 producer and schema-2/3 validator.",
+      "copy_sha256": "2b6ee2c15c52b40536150677bd1a53941dedaa84227ccb13620de2238b4c0bc3",
+      "previous_revision": {
+        "source_sha256": "2c6ad8509b3dad22d7675f631078c480a657776b7be442902e88a2522a3823c7",
+        "copy_sha256": "c6f513dacd210c5241ba6fc8bf0fd0bb6ac392065965c63f5033b22c6b8accc6",
+        "changes": "Endpoint policy amendment only."
+      }
     },
     {
       "source": "line-4/tools/transfer-crosscheck/crosscheck.py",
-      "source_sha256": "fc8004d409356cde4ba1d47117f0b58a43d2ed6555f129be60267176869c6a49",
+      "source_sha256": "31cce1170a07e67da4bced654879153b53edeb9c268c374dbf79a8a95c07367e",
       "copy": "vendor/transfer-crosscheck/crosscheck.py",
-      "changes": "Byte-for-byte copy.",
-      "copy_sha256": "fc8004d409356cde4ba1d47117f0b58a43d2ed6555f129be60267176869c6a49"
+      "changes": "Gathering 07: byte-for-byte refresh from current schema-3 producer and schema-2/3 validator.",
+      "copy_sha256": "31cce1170a07e67da4bced654879153b53edeb9c268c374dbf79a8a95c07367e",
+      "previous_revision": {
+        "source_sha256": "fc8004d409356cde4ba1d47117f0b58a43d2ed6555f129be60267176869c6a49",
+        "copy_sha256": "fc8004d409356cde4ba1d47117f0b58a43d2ed6555f129be60267176869c6a49",
+        "changes": "Byte-for-byte copy."
+      }
     }
   ],
   "endpoint_amendments": "Only vendored capture endpoint policies are extended to credential-free HTTP at numeric loopback 127.0.0.1, explicit port, exact /rpc/1. Original line folders remain unchanged.",
@@ -63,5 +73,6 @@
     "transfer-window.json": "Byte copy of line-4/tools/transfer-crosscheck/publicnode.json; dated real window.",
     "transfer-comparison.json": "Actual stdout of line-4/tools/transfer-crosscheck/crosscheck.py --demo; both retained real observations.",
     "unsigned-transaction.json": "Original Line 3 demo RLP, wrapped with explicit synthetic unsigned demo provenance; never sent."
-  }
+  },
+  "round_07_refresh": "Line 4 copies now support current schema-3 captures and validate optional address summaries; historical schema-2 examples remain unchanged. Other copies remain at their historical provenance."
 }

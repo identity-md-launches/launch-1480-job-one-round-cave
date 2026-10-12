@@ -1,0 +1,309 @@
+[
+  {
+    "command": [
+      "line-1/tools/endpoint-policy/test_policy.py"
+    ],
+    "exit": 0,
+    "tests_run": 10
+  },
+  {
+    "command": [
+      "line-1/tools/hash-snapshot/test_hash_snapshot.py"
+    ],
+    "exit": 0,
+    "tests_run": 20
+  },
+  {
+    "command": [
+      "line-1/tools/pinned-snapshot/test_pinned.py"
+    ],
+    "exit": 0,
+    "tests_run": 11
+  },
+  {
+    "command": [
+      "line-1/tools/snapshot-check/test_checks.py"
+    ],
+    "exit": 0,
+    "tests_run": 6
+  },
+  {
+    "command": [
+      "line-1/tools/snapshot-compare/test_snapshot_compare.py"
+    ],
+    "exit": 0,
+    "tests_run": 11
+  },
+  {
+    "command": [
+      "line-1/tools/snapshot-replay/test_replay.py"
+    ],
+    "exit": 0,
+    "tests_run": 23
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-catalog/test_catalog.py"
+    ],
+    "exit": 0,
+    "tests_run": 9
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-compare/test_compare.py"
+    ],
+    "exit": 0,
+    "tests_run": 19
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-inspect/test_inspect.py"
+    ],
+    "exit": 0,
+    "tests_run": 19
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-portability/test_portability.py"
+    ],
+    "exit": 0,
+    "tests_run": 23
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-source/test_source.py"
+    ],
+    "exit": 0,
+    "tests_run": 21
+  },
+  {
+    "command": [
+      "line-3/tools/erc20-intent/test_intent.py"
+    ],
+    "exit": 0,
+    "tests_run": 11
+  },
+  {
+    "command": [
+      "line-3/tools/gas-budget/test_gas_budget.py"
+    ],
+    "exit": 0,
+    "tests_run": 14
+  },
+  {
+    "command": [
+      "line-3/tools/rpc-unsigned-reader/test_rpc_reader.py"
+    ],
+    "exit": 0,
+    "tests_run": 12
+  },
+  {
+    "command": [
+      "line-3/tools/unsigned-diff/test_unsigned_diff.py"
+    ],
+    "exit": 0,
+    "tests_run": 10
+  },
+  {
+    "command": [
+      "line-3/tools/unsigned-guard/test_guard.py"
+    ],
+    "exit": 0,
+    "tests_run": 8
+  },
+  {
+    "command": [
+      "line-3/tools/zto-eip1559-decoder/test_decoder.py"
+    ],
+    "exit": 0,
+    "tests_run": 12
+  },
+  {
+    "command": [
+      "line-4/tools/erc20-transfer-window/test_transfer_window.py"
+    ],
+    "exit": 0,
+    "tests_run": 19
+  },
+  {
+    "command": [
+      "line-4/tools/transfer-crosscheck/test_crosscheck.py"
+    ],
+    "exit": 0,
+    "tests_run": 15
+  },
+  {
+    "command": [
+      "line-4/tools/transfer-window-receipt/test_receipt.py"
+    ],
+    "exit": 0,
+    "tests_run": 5
+  },
+  {
+    "command": [
+      "line-1/tools/hash-snapshot/hash_snapshot.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-1/tools/snapshot-replay/replay.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-1/tools/snapshot-compare/snapshot_compare.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-1/tools/endpoint-policy/endpoint_policy.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff/handoff.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff/handoff.py",
+      "verify",
+      "line-2/handoff.zip"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-inspect/inspect_handoff.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-compare/compare_handoff.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-source/source_check.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-catalog/catalog.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-2/tools/handoff-portability/portability.py",
+      "demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/zto-eip1559-decoder/tx_decode.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/erc20-intent/intent.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/unsigned-diff/unsigned_diff.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/unsigned-guard/guard.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/rpc-unsigned-reader/rpc_reader.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/gas-budget/gas_budget.py",
+      "--profile",
+      "prague",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-3/tools/gas-budget/gas_budget.py",
+      "--profile",
+      "prague",
+      "--format",
+      "json",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-4/tools/transfer-crosscheck/crosscheck.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  },
+  {
+    "command": [
+      "line-4/tools/transfer-window-receipt/receipt.py",
+      "--demo"
+    ],
+    "exit": 0,
+    "tests_run": 0
+  }
+]

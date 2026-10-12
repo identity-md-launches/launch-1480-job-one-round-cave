@@ -1,0 +1,59 @@
+[
+  {
+    "arguments": [
+      "rpc_snapshot.py"
+    ],
+    "exit": 0,
+    "stderr": "",
+    "transport_adaptation": "urlopen replaced only during trial with no-proxy/no-redirect opener",
+    "offline_summary": {
+      "captured_at": "2026-10-12T21:31:08Z",
+      "endpoint": "https://ethereum-rpc.publicnode.com",
+      "method": "eth_blockNumber",
+      "params": [],
+      "result": "0x18f761a",
+      "evidence_limits": "Provider observation; not proof of authenticity, finality or current state.",
+      "decimal_result": "26179098"
+    }
+  },
+  {
+    "arguments": [
+      "rpc_snapshot.py",
+      "eth_call",
+      "[{\"to\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\", \"data\": \"0x18160ddd\"}, \"latest\"]"
+    ],
+    "exit": 0,
+    "stderr": "",
+    "transport_adaptation": "urlopen replaced only during trial with no-proxy/no-redirect opener",
+    "offline_summary": {
+      "captured_at": "2026-10-12T21:31:08Z",
+      "endpoint": "https://ethereum-rpc.publicnode.com",
+      "method": "eth_call",
+      "params": [
+        {
+          "data": "0x18160ddd",
+          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e"
+        },
+        "latest"
+      ],
+      "result": "0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000",
+      "evidence_limits": "Provider observation; not proof of authenticity, finality or current state."
+    }
+  },
+  {
+    "arguments": [
+      "pinned_snapshot.py",
+      "capture"
+    ],
+    "exit": 0,
+    "stderr": "",
+    "transport_adaptation": "urlopen replaced only during trial with no-proxy/no-redirect opener",
+    "offline_summary": {
+      "block_number": "26179029",
+      "block_hash": "0x8add784e289850ccce69654250ec6a0c657827868f8a1fa7c6acc658ee19ea44",
+      "token": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
+      "total_supply_base_units": "1000000000000000000000000000",
+      "evidence_limits": "Provider observation with before/after block identity checks; not cryptographic proof, independent corroboration, or a guarantee of finality. A reorg between reads and back again can escape detection."
+    }
+  }
+]

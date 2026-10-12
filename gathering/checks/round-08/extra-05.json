@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-1/tools/pinned-snapshot/pinned_snapshot.py",
+    "inspect"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"block_hash\": \"0xf76539e08b42037cad963c2af646774753fce06ad37245bd1487b9e6ffa549ba\",\n  \"block_number\": \"26177368\",\n  \"evidence_limits\": \"Provider observation with before/after block identity checks; not cryptographic proof, independent corroboration, or a guarantee of finality. A reorg between reads and back again can escape detection.\",\n  \"token\": \"0xd782bdea4ef02a0bd391eb9089470c8080f0a68e\",\n  \"total_supply_base_units\": \"1000000000000000000000000000\"\n}\n",
+  "stderr": ""
+}

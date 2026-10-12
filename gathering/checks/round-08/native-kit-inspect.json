@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "line-2/tools/handoff-inspect/inspect_handoff.py",
+    "inspect",
+    "gathering/checks/round-08/call-witness.zip",
+    "--sha256",
+    "583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21"
+  ],
+  "exit": 0,
+  "stdout": "{\n  \"archive_bytes\": 78959,\n  \"archive_sha256\": \"583798a1e5d24d6305b153e9853014ec9d1a7c917bfae0153ec9a86405cb9e21\",\n  \"file_count\": 12,\n  \"files\": [\n    {\n      \"bytes\": 2566,\n      \"path\": \"PROVENANCE.json\",\n      \"sha256\": \"425c36dcf184f9d3e25f52a44647d0b95f4238d32f4ed9f744cf093b307b2d7f\"\n    },\n    {\n      \"bytes\": 4956,\n      \"path\": \"README.md\",\n      \"sha256\": \"1c71a1bf79cdc11d564bc9d317d0f08d64be949eea73a32535889c541019c5ec\"\n    },\n    {\n      \"bytes\": 2840,\n      \"path\": \"examples/zto-imd-snapshot.json\",\n      \"sha256\": \"a12b933a6fc532e43a47a031e5811c1bacaa9106e5cf0ac84fa1a4ea496d4d0f\"\n    },\n    {\n      \"bytes\": 8306,\n      \"path\": \"test_witness.py\",\n      \"sha256\": \"4b90bfe8bf8cafdb02e093cb8499cafaef9162105c80d59847c601318c8de2c6\"\n    },\n    {\n      \"bytes\": 5488,\n      \"path\": \"vendor/erc20-intent/intent.py\",\n      \"sha256\": \"5502c5be013a0e7f1c6226627fe6feee3d732175bfc328f413e7d49fc22ec101\"\n    },\n    {\n      \"bytes\": 6452,\n      \"path\": \"vendor/gas-budget/gas_budget.py\",\n      \"sha256\": \"de9efb286f491d9d6ef75ec731604acfc59bac7a33a58de9dcb568900b06b31c\"\n    },\n    {\n      \"bytes\": 12161,\n      \"path\": \"vendor/hash-snapshot/hash_snapshot.py\",\n      \"sha256\": \"d44c3960020386ab0f1080316b16b3551876ec20a01422d9fa2378994b2bdb49\"\n    },\n    {\n      \"bytes\": 7509,\n      \"path\": \"vendor/rpc-snapshot/rpc_snapshot.py\",\n      \"sha256\": \"4539fe2da1f25e31f2178681075fa882f3dccb6f71b201cffb1f78292c96b9f4\"\n    },\n    {\n      \"bytes\": 5843,\n      \"path\": \"vendor/rpc-unsigned-reader/rpc_reader.py\",\n      \"sha256\": \"d5ede86a55038b43955a63483ad190bfc69d1c82b1e4eca0523c96903f04dd35\"\n    },\n    {\n      \"bytes\": 6769,\n      \"path\": \"vendor/snapshot-replay/replay.py\",\n      \"sha256\": \"ebadcca77595c8d8b4a4789c6780c2d0b605c268f51a5ee7bc25b7c77f391975\"\n    },\n    {\n      \"bytes\": 6902,\n      \"path\": \"vendor/zto-eip1559-decoder/tx_decode.py\",\n      \"sha256\": \"c5d852004603011b890a991d6ef988093d1974df00c48549de8f076029146757\"\n    },\n    {\n      \"bytes\": 5909,\n      \"path\": \"witness.py\",\n      \"sha256\": \"aa5817fadc9c18b12a74deae220b874fd471d74e38c91ffc959ce4634a3c8e09\"\n    }\n  ],\n  \"format\": \"handoff-inspection-v1\",\n  \"limits\": {\n    \"archive_bytes\": 69206016,\n    \"files\": 1000,\n    \"manifest_bytes\": 524288,\n    \"metadata_bytes\": 524288,\n    \"payload_bytes\": 67108864\n  },\n  \"payload_bytes\": 75701,\n  \"trusted_digest_matched\": true,\n  \"verified\": true\n}\n",
+  "stderr": "",
+  "digest_note": "Locally computed integrity reference; not an independent sender-authentication channel."
+}

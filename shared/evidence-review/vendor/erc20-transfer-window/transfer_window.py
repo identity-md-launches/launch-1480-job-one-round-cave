@@ -88,14 +88,16 @@ def as_quantity(number):
 def validate_endpoint(endpoint):
     try:
         parts = urllib.parse.urlsplit(endpoint)
-        allowed_scheme = (parts.scheme == 'https' or (
-            parts.scheme == 'http' and parts.hostname == '127.0.0.1'
-            and parts.port is not None and parts.path == '/rpc/1'))
-        if (not allowed_scheme or not parts.hostname or parts.username is not None
-                or parts.password is not None or parts.query or parts.fragment):
-            raise ValueError("public HTTPS endpoint without credentials/query/fragment required")
+        if (not parts.hostname or parts.username is not None or parts.password is not None
+                or parts.query or parts.fragment):
+            raise ValueError("credential-free endpoint without query/fragment required")
         if parts.port is not None and not 1 <= parts.port <= 65535:
             raise ValueError("invalid port")
+        public_https = parts.scheme == "https"
+        local_mainnet_relay = (parts.scheme == "http" and parts.hostname == "127.0.0.1"
+                               and parts.port is not None and parts.path == "/rpc/1")
+        if not (public_https or local_mainnet_relay):
+            raise ValueError("public HTTPS or exact 127.0.0.1:<port>/rpc/1 required")
     except ValueError as exc:
         raise RpcError("invalid RPC endpoint: {}".format(exc)) from exc
 
@@ -119,6 +121,13 @@ def topic_address(topic):
     if topic[2:26] != "0" * 24:
         raise RpcError("indexed address topic has nonzero ABI padding")
     return "0x" + topic[-40:]
+
+
+def address(value):
+    """Normalize one externally supplied Ethereum address without resolving it."""
+    if not isinstance(value, str) or re.fullmatch(r"0x[0-9a-fA-F]{40}", value) is None:
+        raise argparse.ArgumentTypeError("address must be exactly 0x followed by 40 hex characters")
+    return value.lower()
 
 
 def display_units(raw, decimals):
@@ -194,6 +203,39 @@ def validate_logs(logs, decimals, token_address, from_block, to_block):
     return sorted(unique.values(), key=lambda item: (item["block"], item["log_index"])), duplicates
 
 
+def address_summary(transfers, selected_address, decimals):
+    """Summarize selected-window flows involving one public address.
+
+    This is deliberately a summary of the already validated bounded log window,
+    not a token balance calculation. A self-transfer counts once in each flow.
+    """
+    received = sent = incoming_count = outgoing_count = matched_count = 0
+    for item in transfers:
+        raw = int(item["raw_value"])
+        if item["to"] == selected_address or item["from"] == selected_address:
+            matched_count += 1
+        if item["to"] == selected_address:
+            received += raw
+            incoming_count += 1
+        if item["from"] == selected_address:
+            sent += raw
+            outgoing_count += 1
+    net = received - sent
+    return {
+        "address": selected_address,
+        "matching_transfer_count": matched_count,
+        "incoming_transfer_count": incoming_count,
+        "outgoing_transfer_count": outgoing_count,
+        "received_raw": str(received),
+        "received": display_units(received, decimals),
+        "sent_raw": str(sent),
+        "sent": display_units(sent, decimals),
+        "net_raw": str(net),
+        "net": display_units(net, decimals) if net >= 0 else "-" + display_units(-net, decimals),
+        "scope": "Flows in this captured transfer-log window only; not a token balance or a complete activity history.",
+    }
+
+
 def block_anchor(endpoint, number):
     block = rpc(endpoint, "eth_getBlockByNumber", [hex(number), False])
     if not isinstance(block, dict) or quantity(block.get("number"), "anchor block number") != number:
@@ -207,6 +249,7 @@ def arguments(argv):
     parser.add_argument("--from-block", type=parse_block, help="first inclusive block")
     parser.add_argument("--to-block", type=parse_block, help="last inclusive block")
     parser.add_argument("--latest-window", type=int, default=12, help="latest inclusive block window when bounds are omitted (default: 12)")
+    parser.add_argument("--address", type=address, help="optional public address to summarize within the captured window")
     parser.add_argument("--rpc", default=DEFAULT_RPC, help="public Ethereum JSON-RPC URL")
     args = parser.parse_args(argv)
     if (args.from_block is None) != (args.to_block is None):
@@ -261,7 +304,7 @@ def main(argv=None):
     output = {
         "captured_at": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "read_only": True,
-        "schema_version": 2,
+        "schema_version": 3,
         "chain_id": chain_id,
         "from_block_anchor": start_anchor,
         "to_block_anchor": end_anchor,
@@ -280,6 +323,8 @@ def main(argv=None):
         "transfer_count": len(transfers),
         "transfers": transfers,
     }
+    if args.address is not None:
+        output["address_window_summary"] = address_summary(transfers, args.address, decimals)
     print(json.dumps(output, indent=2, sort_keys=True))
     return 0
 

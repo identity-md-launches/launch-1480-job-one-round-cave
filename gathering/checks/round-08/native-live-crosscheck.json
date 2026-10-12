@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "agreement",
+  "read_only": true,
+  "providers": [
+    "https://ethereum-rpc.publicnode.com",
+    "https://eth.drpc.org"
+  ],
+  "token": "ZTO",
+  "from_block": 26178996,
+  "to_block": 26178997,
+  "transfer_counts": [
+    0,
+    0
+  ],
+  "metadata_differences": [],
+  "only_left": [],
+  "only_right": [],
+  "conflicts": [],
+  "limitations": "Agreement corroborates two provider observations; it does not prove completeness, provider independence, finality, or current balances."
+}

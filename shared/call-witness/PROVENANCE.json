@@ -1,0 +1,58 @@
+[
+  {
+    "source": "line-1/tools/snapshot-replay/replay.py",
+    "copy": "vendor/snapshot-replay/replay.py",
+    "source_sha256": "ebadcca77595c8d8b4a4789c6780c2d0b605c268f51a5ee7bc25b7c77f391975",
+    "copy_sha256": "ebadcca77595c8d8b4a4789c6780c2d0b605c268f51a5ee7bc25b7c77f391975",
+    "changes": "none"
+  },
+  {
+    "source": "line-1/tools/hash-snapshot/hash_snapshot.py",
+    "copy": "vendor/hash-snapshot/hash_snapshot.py",
+    "source_sha256": "d44c3960020386ab0f1080316b16b3551876ec20a01422d9fa2378994b2bdb49",
+    "copy_sha256": "d44c3960020386ab0f1080316b16b3551876ec20a01422d9fa2378994b2bdb49",
+    "changes": "none"
+  },
+  {
+    "source": "line-1/tools/rpc-snapshot/rpc_snapshot.py",
+    "copy": "vendor/rpc-snapshot/rpc_snapshot.py",
+    "source_sha256": "4539fe2da1f25e31f2178681075fa882f3dccb6f71b201cffb1f78292c96b9f4",
+    "copy_sha256": "4539fe2da1f25e31f2178681075fa882f3dccb6f71b201cffb1f78292c96b9f4",
+    "changes": "none"
+  },
+  {
+    "source": "line-3/tools/gas-budget/gas_budget.py",
+    "copy": "vendor/gas-budget/gas_budget.py",
+    "source_sha256": "de9efb286f491d9d6ef75ec731604acfc59bac7a33a58de9dcb568900b06b31c",
+    "copy_sha256": "de9efb286f491d9d6ef75ec731604acfc59bac7a33a58de9dcb568900b06b31c",
+    "changes": "none"
+  },
+  {
+    "source": "line-3/tools/rpc-unsigned-reader/rpc_reader.py",
+    "copy": "vendor/rpc-unsigned-reader/rpc_reader.py",
+    "source_sha256": "d5ede86a55038b43955a63483ad190bfc69d1c82b1e4eca0523c96903f04dd35",
+    "copy_sha256": "d5ede86a55038b43955a63483ad190bfc69d1c82b1e4eca0523c96903f04dd35",
+    "changes": "none"
+  },
+  {
+    "source": "line-3/tools/erc20-intent/intent.py",
+    "copy": "vendor/erc20-intent/intent.py",
+    "source_sha256": "5502c5be013a0e7f1c6226627fe6feee3d732175bfc328f413e7d49fc22ec101",
+    "copy_sha256": "5502c5be013a0e7f1c6226627fe6feee3d732175bfc328f413e7d49fc22ec101",
+    "changes": "none"
+  },
+  {
+    "source": "line-3/tools/zto-eip1559-decoder/tx_decode.py",
+    "copy": "vendor/zto-eip1559-decoder/tx_decode.py",
+    "source_sha256": "c5d852004603011b890a991d6ef988093d1974df00c48549de8f076029146757",
+    "copy_sha256": "c5d852004603011b890a991d6ef988093d1974df00c48549de8f076029146757",
+    "changes": "none"
+  },
+  {
+    "source": "line-1/tools/snapshot-replay/example-mainnet.json",
+    "copy": "examples/zto-imd-snapshot.json",
+    "source_sha256": "a12b933a6fc532e43a47a031e5811c1bacaa9106e5cf0ac84fa1a4ea496d4d0f",
+    "copy_sha256": "a12b933a6fc532e43a47a031e5811c1bacaa9106e5cf0ac84fa1a4ea496d4d0f",
+    "changes": "none; dated provider observation"
+  }
+]
